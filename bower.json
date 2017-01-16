@@ -1,0 +1,25 @@
+{
+  "name": "halftones",
+  "version": "0.1.0",
+  "authors": [
+    "Jason Eberle <jayeb333@gmail.com>"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "description": "Halftone SVG generator",
+  "homepage": "https://github.com/jayeb/halftones",
+  "dependencies": {
+    "normalize-css": "normalize.css#^5.0.0",
+    "vue": "^2.1.4",
+    "lodash": "^4.17.2",
+    "jquery": "^3.1.1",
+    "file-saver": "^1.3.3"
+  },
+  "overrides": {
+    "vue": {
+      "main": [
+        "dist/vue.js"
+      ]
+    }
+  }
+}

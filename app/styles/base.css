@@ -1,0 +1,66 @@
+@import 'app.vars.css';
+
+body {
+  @mixin bodyType;
+
+  min-width: 320px;
+
+  background: $color_bg;
+  color: $color_fg;
+}
+
+a {
+  color: inherit;
+}
+
+// Hide the reference SVG element
+svg.refs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+// Hide unwanted Vue templates
+[v-cloak] {
+  display: none;
+}
+
+p, h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: $type_line_body_full;
+
+  @media (max-width: $breakpoint_compact) {
+    margin-bottom: $type_line_body_compact;
+  }
+}
+
+p {
+  @mixin bodyType;
+}
+
+h1,
+h2 {
+  @mixin headType;
+}
+
+h3 {
+  @mixin subheadType;
+}
+
+#halftone {
+  display: block;
+
+  background: $color_accent_orange;
+
+  circle {
+    fill: $color_bg;
+
+    &:hover {
+      transform-origin: center center;
+      transform: scale(2);
+    }
+  }
+}

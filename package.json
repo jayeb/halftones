@@ -1,0 +1,17 @@
+{
+  "name": "halftones",
+  "version": "0.1.0",
+  "description": "Halftone SVG generator",
+  "author": {
+    "name": "Jason Eberle",
+    "email": "jayeb333@gmail.com"
+  },
+  "repository": "jayeb/halftones",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bower": "1.6.8",
+    "gulp": "3.9.1",
+    "lodash": "4.6.1",
+    "web-tools": "https://github.com/imgix/web-tools.git#6.1.1"
+  }
+}

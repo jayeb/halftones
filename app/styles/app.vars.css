@@ -1,0 +1,99 @@
+/*--- Measurements ---*/
+$unit: 10px;
+
+/*--- Colors ---*/
+$color_fg: #000;
+$color_bg: #fff;
+
+/*--- Typography ---*/
+$type_face: sans-serif;
+
+$type_size_base: 16px;
+$type_size_compact: 13px;
+
+// http://www.modularscale.com/?16&px&1.25
+$type_ratio: 1.333;
+
+$type_size_body_full: $type_size_base;
+$type_line_body_full: calc($unit * 3);
+
+$type_size_husky_full: calc($type_size_body_full * $type_ratio);
+$type_line_husky_full: calc($unit * 3);
+
+$type_size_mini_full: calc($type_size_body_full / $type_ratio);
+$type_line_mini_full: calc($unit * 2);
+
+$type_size_subhead_full: calc($type_size_husky_full * $type_ratio);
+$type_line_subhead_full: calc($unit * 4);
+
+$type_size_head_full: calc($type_size_subhead_full * $type_ratio);
+$type_line_head_full: calc($unit * 5);
+
+/*--- Mixins ---*/
+@define-mixin bodyType {
+  font-family: $type_face;
+  font-weight: 400;
+  font-size: $type_size_body_full;
+  line-height: $type_line_body_full;
+
+  @media (max-width: $breakpoint_compact) {
+    font-size: $type_size_body_compact;
+    line-height: $type_line_body_compact;
+  }
+}
+
+@define-mixin huskyType {
+  font-family: $type_face;
+  font-weight: 400;
+  font-size: $type_size_husky_full;
+  line-height: $type_line_husky_full;
+
+  @media (max-width: $breakpoint_compact) {
+    font-size: $type_size_husky_compact;
+    line-height: $type_line_husky_compact;
+  }
+}
+
+@define-mixin miniType {
+  font-family: $type_face;
+  font-weight: 400;
+  font-size: $type_size_mini_full;
+  line-height: $type_line_mini_full;
+
+  @media (max-width: $breakpoint_compact) {
+    font-size: $type_size_mini_compact;
+    line-height: $type_line_mini_compact;
+  }
+}
+
+@define-mixin subheadType {
+  font-family: $type_face;
+  font-weight: 700;
+  font-size: $type_size_subhead_full;
+  line-height: $type_line_subhead_full;
+
+  @media (max-width: $breakpoint_compact) {
+    font-size: $type_size_subhead_compact;
+    line-height: $type_line_subhead_compact;
+  }
+}
+
+@define-mixin headType {
+  font-family: $type_face;
+  font-weight: 700;
+  font-size: $type_size_head_full;
+  line-height: $type_line_head_full;
+
+  @media (max-width: $breakpoint_compact) {
+    font-size: $type_size_head_compact;
+    line-height: $type_line_head_compact;
+  }
+}
+
+@define-mixin highRes {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+    only screen and (-o-min-device-pixel-ratio: 13/10),
+    only screen and (min-resolution: 120dpi) {
+    @mixin-content;
+  }
+}

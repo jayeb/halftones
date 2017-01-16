@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>Halftone SVG Generator</title>
+
+  <!-- inject:ext-css -->
+    <!-- CSS from external sources ends up here -->
+  <!-- endinject -->
+
+  <!-- inject:app-css -->
+    <!-- CSS from this app ends up here -->
+  <!-- endinject -->
+
+  <!-- inject:app-headerPartials -->
+    <!-- HTML header partials from this app end up here -->
+  <!-- endinject -->
+</head>
+
+<body>
+  <!-- inject:app-svg -->
+    <!-- SVG from this app ends up here -->
+  <!-- endinject -->
+
+  <div id="app">
+    <form @submit="renderSVG">
+      <div>
+        <label for="halftone/file">File</label>
+        <input type="file"
+          id="halftone/file"
+          @change="setFile" />
+      </div>
+
+      <div>
+        <label for="halftone/dotSize">Dot Size</label>
+        <input type="number"
+          id="halftone/dotSize"
+          v-model="dotSize"
+          min="0" />
+      </div>
+
+      <div>
+        <label for="halftone/svg-width">SVG Width</label>
+        <input type="number"
+          id="halftone/svg-width"
+          v-model="svgWidth"
+          min="0" />
+      </div>
+
+      <button type="submit">Render</button>
+    </form>
+
+    <div id="svg-container"></div>
+
+    <button
+      @click="downloadSVG"
+      :disabled="!halftoneFile">
+      Download SVG file
+    </button>
+    <span v-if="halftoneFileSize">
+      {{ halftoneFileSize }}
+    </span>
+  </div>
+
+  <!-- inject:ext-js -->
+    <!-- JS from external sources ends up here -->
+  <!-- endinject -->
+
+  <!-- inject:app-js -->
+    <!-- JS from this app ends up here -->
+  <!-- endinject -->
+
+  <!-- inject:app-footerPartials -->
+    <!-- HTML footer partials from this app end up here -->
+  <!-- endinject -->
+</body>
+</html>
